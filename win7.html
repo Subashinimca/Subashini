@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Location Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .box {
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Web Page Location Details</h1>
+  <div class="box" id="locationDetails"></div>
+
+  <script>
+    const locationBox = document.getElementById('locationDetails');
+    
+    // Get window.location parts
+    const href     = window.location.href;
+    const protocol = window.location.protocol;
+    const hostname = window.location.hostname;
+    const pathname = window.location.pathname;
+    const search   = window.location.search;
+    const hash     = window.location.hash;
+
+    // Build HTML content
+    const content = `
+      <strong>Full URL:</strong> ${href} <br>
+      <strong>Protocol:</strong> ${protocol} <br>
+      <strong>Hostname:</strong> ${hostname} <br>
+      <strong>Pathname:</strong> ${pathname} <br>
+      <strong>Query String (Search):</strong> ${search || "(none)"} <br>
+      <strong>Hash:</strong> ${hash || "(none)"} <br>
+    `;
+
+    // Display in the page
+    locationBox.innerHTML = content;
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+//<html>
+//<script>
+//Get specific parts:
+//document.write("Protocol "+window.location.protocol+"<br>"); // e.g. "https:"
+//document.write("host name "+window.location.hostname+"<br>"); // e.g. "example.com"
+//document.write("path name "+window.location.pathname+"<br>"); // e.g. "/about"
+//document.write("search "+window.location.search+"<br>");   // query string (e.g. "?id=123")
+//document.write("Hash "+window.location.hash);
+//</script>
+//</html>
