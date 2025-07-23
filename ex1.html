@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+    <h1>Arithmetic Operations</h1>
+    <br><hr><br>
+    <div class="container">
+        <form onsubmit="return submitForm()">
+            <label for="inputA">ENTER THE VALUE OF A:</label>
+            <input type="text" placeholder="enter a number only" id="inputA">
+            <br><br><br>
+            <label for="inputB">ENTER THE VALUE OF B:</label>
+            <input type="text" placeholder="enter a number only" id="inputB">
+            <br><br><br>
+            <button type="submit">Submit</button> <br><br>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+    function submitForm() {
+    // Get the values from the input fields
+    let a = document.getElementById('inputA').value;
+    let b = document.getElementById('inputB').value;
+
+    // Check if the inputs are valid numbers
+    if (isNaN(a) || isNaN(b) || a === "" || b === "") {
+        alert("Please enter valid numbers.");
+        return false; // Prevent form submission
+    }
+
+    // Convert input values to numbers
+    a = parseFloat(a);
+    b = parseFloat(b);
+
+    // Perform arithmetic operations
+    let addition = a + b;
+    let subtraction = a - b;
+    let multiplication = a * b;
+    let division = b !== 0 ? a / b : "Cannot divide by zero"; // Prevent division by zero
+
+    // Display the results
+    let resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = `
+        <h2>Results:</h2>
+        <p>Addition: ${addition}</p>
+        <p>Subtraction: ${subtraction}</p>
+        <p>Multiplication: ${multiplication}</p>
+        <p>Division: ${division}</p>
+    `;
+    
+    return false; // Prevent form submission so page doesn't reload
+}
+
+    </script>
+</body>
+</html>
